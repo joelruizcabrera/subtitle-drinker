@@ -1,6 +1,6 @@
 'use strict';
 
-const API_HOST = "95.111.249.14"
+const API_HOST = "https://api.subtitledrinker.de/api"
 
 import { createStore } from 'vuex'
 import axios from 'axios'
@@ -23,7 +23,7 @@ export default createStore({
   actions: {
     async fetchLanguages(ctx) {
       return new Promise((resolve, reject) => {
-        axios.get("http://" + API_HOST + "/api/Languages/read.php")
+        axios.get(API_HOST + "/Languages/read.php")
             .then((res) => {
               resolve(ctx.commit('GET_ALL_LANGUAGES', res.data))
             })
@@ -34,7 +34,8 @@ export default createStore({
     },
     async fetchMovies(ctx) {
       return new Promise((resolve, reject) => {
-        axios.get("http://" + API_HOST + "/api/Movies/read.php")
+        console.log("test")
+        axios.get(API_HOST + "/Movies/read.php")
             .then((res) => {
               resolve(ctx.commit('GET_ALL_MOVIES', res.data))
             })

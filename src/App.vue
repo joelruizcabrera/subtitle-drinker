@@ -17,6 +17,7 @@ export default {
     Footer
   },
   created() {
+    console.log("test")
     this.$store.dispatch('fetchMovies')
   },
 }

@@ -67,7 +67,7 @@ export default {
   methods: {
     getMovieById() {
       return new Promise((resolve, reject) => {
-        axios.get("http://" + this.$store.state.apiHost + "/api/Movies/read_one.php?mv_id=" + this.slugId)
+        axios.get(this.$store.state.apiHost + "/Movies/read_one.php?mv_id=" + this.slugId)
             .then((res) => {
               this.movieInfo = res.data
               this.movieInfo.mv_langs = this.movieInfo.mv_langs.split(',')

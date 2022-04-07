@@ -42,7 +42,7 @@ export default {
   methods: {
     fetchMovieWords() {
       return new Promise((resolve, reject) => {
-        axios.get("http://" + this.$store.state.apiHost + "/api/MovieWords/read.php?sb_mv_id=" + this.movieId)
+        axios.get(this.$store.state.apiHost + "/MovieWords/read.php?sb_mv_id=" + this.movieId)
             .then((res) => {
               this.movieWords = res.data
             })

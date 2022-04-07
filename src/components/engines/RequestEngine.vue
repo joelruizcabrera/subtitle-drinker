@@ -99,7 +99,7 @@ export default {
           req_mv_language: this.formData.mvLanguage,
           req_mv_thumbnail: this.formData.mvThumbnail
         }
-        axios.post("http://95.111.249.14/api/Requests/create.php", data, {"content-type": "application/json"})
+        axios.post(this.$store.state.apiHost + "/Requests/create.php", data, {"content-type": "application/json"})
         .then(res => {
           console.log(res)
           switch (res.data.status) {

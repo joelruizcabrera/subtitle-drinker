@@ -204,7 +204,28 @@ blackList = [
     "weit",
     "denn",
     "wohl",
-    "wieder"
+    "wieder",
+    "oh",
+    "deine",
+    "hallo",
+    "danke",
+    "dein",
+    "ihnen",
+    "okay",
+    "soll",
+    "warum",
+    "reden",
+    "sehen",
+    "vielleicht",
+    "ganz",
+    "gesagt",
+    "steht",
+    "viel",
+    "meiner",
+    "schön",
+    "natürlich",
+    "morgen",
+    "willst"
 ]
 rank = 1
 #print
@@ -212,6 +233,6 @@ for i, obj in enumerate(newList):
     if obj.count > 1:
         if obj.word not in blackList:
             if rank <= 15:
-                print("{rank: " + str(rank) + ", word: '" + obj.word.title() + "', count: " + str(obj.count) + "},")
+                print('{"sb_mv_id":"42cdd73b-4ff1-4ca0-b8c8-ddbc90150380", "sb_rank": ' + str(rank) + ', "sb_word": "' + obj.word.title() + '", "sb_count": ' + str(obj.count) + '},')
                 rank+=1
 
